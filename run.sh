@@ -11,7 +11,7 @@ numtasks="$3"
 
 mkdir -p tmp
 cd tmp || exit
-cmake -DCMAKE_C_COMPILER=clang -DCMAKE_BUILD_TYPE=Release ..
+cmake -DCMAKE_BUILD_TYPE=Release ..
 cmake --build . -- -j "$numjobs"
 echo "Single thread speed:"
 /usr/bin/time ./primes -q "--N=$numprimes"
